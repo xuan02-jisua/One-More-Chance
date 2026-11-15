@@ -1,4 +1,4 @@
-﻿# The script of the game goes in this file.
+# The script of the game goes in this file.
 
 # Declare characters used by this game. The color argument colorizes the
 # name of the character.
@@ -28,8 +28,8 @@ label start:
         $ povname = "Angel"
     pov "I'm [povname]."
 
-    "[povname], you are now assigned a new mission. "
-    "Sadly, as of just now, one sole at the brink of despair chose to end his life. "
+    "[povname], you are now assigned with a new mission. "
+    "Sadly, as of just now, a poor soul chose to end his life at the brink of despair . "
     "His life is full of struggles, obstacles and sadness."
     "I hereby assign you to guide him towards hope."
 
@@ -39,7 +39,6 @@ label start:
     "But remember, not every choice leads to a happy ending......"
     "If you fail, time will rewind and you will be stucked in a time loop. "
     "You will remember everything, even when the world forgets. "
-    "Keep on trying and never give up. "
     "Good luck. "
 
     pov "Okay, I will do my best!"
@@ -75,6 +74,7 @@ label timeloop:
         zoom 3.5
     $ loop_count += 1
     "TIME LOOP [loop_count]"
+    show die happily at truecenter
     "Ohno, I have failed my task....."
     "But it's okay, I have learned from my mistake. "
     "I am ready to start over again. "
@@ -85,9 +85,9 @@ label student:
         zoom 3.5
     
     "In the classroom"
-    show angry at truecenter
     "The school bell rings for the third time. "
     "Class has dismissed an hour ago. "
+    show angry at truecenter
     "A student sits alone looking at the table. "
     "His examination papers are scattered all over the table. "
     "He stares at the marks disappointedly as his eyes slowly watered. "
@@ -125,7 +125,6 @@ label student:
                     s "How do you know? "
                     pov "Judging by how you are so concerned about your results, "
                     pov "I trust that you must have put a lot of effort. "
-                    pov "But things doesn't go out well like they should. "
                     s "Finally, someone that understands me! "
                     s "What should I do? "
 
@@ -168,11 +167,12 @@ label student:
 
         "Have you studied before the exam? ":
             s "Why is everyone questioning me?"
+            hide angry
+            show girl despair at truecenter
             "The student runs out of the classroom. "
             "As you follow him, you see him running towards the third floor corridor."
             "Before you could pull him, he jumps off the third floor. "
-            hide angry
-            show girl despair at truecenter
+            
             jump ending
 
 
